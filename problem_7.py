@@ -6,11 +6,11 @@
 # What is the 10,001st prime number?
 
 import math
-from euler.mathtools import Primes
+from euler.mathtools import primes_under
 
 def main():
     c = 150000 # 13,848 prime numbers appear before this constant
-    primes = Primes.all_until(c)
+    primes = primes_under(c)
     target_prime = primes[10001 - 1] # zero based
     print "The 10001th prime number is: %d" % target_prime
 
