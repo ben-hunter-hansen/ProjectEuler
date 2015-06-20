@@ -29,25 +29,19 @@
 
 from functools import reduce
 
-# Finds and computes adjacent digits in a number n
-#
+# Finds and computes the products of
+# adjacent digits in a number n
 # @param n          Number to search
 # @param steps      Desired amount of adjacent digits
-# @param offset     Search start index (internal)
-# @param products   A list of all computed products (internal)
 def adjacent_products(n,steps,offset=0,products=None):
     i, mult_slice = offset, lambda l: int(reduce(lambda a,b: int(a)*int(b), l))
     if products is None: products = []
 
-    # Base case, no more combinations to attempt.
-    # Return all non-zero products
     if offset > steps:
         return filter(lambda x: x != 0,products)
 
-    # Recursive case, search and compute combinations then
-    # try again with a different offset
     while i < len(n):
-        if (i + 4) > len(n):
+        if (i + steps) > len(n):
             remaining = len(n) - i
             take = mult_slice(n[i:i+remaining])
             products.append(take)
