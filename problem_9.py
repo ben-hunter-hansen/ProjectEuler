@@ -37,7 +37,7 @@ def triplet_with_sum(target):
         m, n, k = arg_gen((limit_mn,limit_k))
         triplet = gen_triplet(m,n,k)
         if sum(triplet) == target and not any(i == 0 for i in triplet):
-            return gen_triplet(m,n,k)
+            return triplet
 
     return triplet_with_sum(target)
 
