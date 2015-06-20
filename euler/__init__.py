@@ -1,1 +1,1 @@
-from mathtools import *
+from mathtools import Primes
