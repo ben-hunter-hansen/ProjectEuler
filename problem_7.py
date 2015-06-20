@@ -6,6 +6,7 @@
 # What is the 10,001st prime number?
 
 import math
+from euler.mathtools import Primes
 
 # Sums up all prime indicies of a
 # and adds their values to a list
@@ -15,20 +16,10 @@ def seive_to_dict(a):
         if a[i] == True: primes["values"].append(i)
     return primes
 
-# Seive of Eratosthenes implementation
-def seive_of_eratosthenes(n):
-    a = [True if i > 1 else False for i in range(n)]
-    sqrt_real = lambda x: math.trunc(math.sqrt(x))+1
-    for i in xrange(2,sqrt_real(n)):
-        j, steps = i**2,1
-        while j < len(a):
-            a[j] = False
-            j, steps = (i**2)+(steps*i), steps + 1
-    return seive_to_dict(a)
 
 def main():
     c = 150000 # 13,848 prime numbers appear before this constant
-    prime_data = seive_of_eratosthenes(150000)
+    prime_data = seive_to_dict(Primes.seive(c))
     primes = prime_data["values"]
     target_prime = primes[10001 - 1] # zero based
     print "The 10001th prime number is: %d" % target_prime
