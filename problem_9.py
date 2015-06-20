@@ -33,10 +33,10 @@ def arg_gen(limits):
 def triplet_with_sum(target):
     limit_mn = int(sqrt(target))
     limit_k = int(sqrt(limit_mn))
-
-    for i in range(target):
+    for i in range((2*limit_mn)*limit_k):
         m, n, k = arg_gen((limit_mn,limit_k))
-        if sum(gen_triplet(m,n,k)) == target:
+        triplet = gen_triplet(m,n,k)
+        if sum(triplet) == target and not any(i == 0 for i in triplet):
             return gen_triplet(m,n,k)
 
     return triplet_with_sum(target)
