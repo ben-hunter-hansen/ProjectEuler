@@ -22,3 +22,9 @@ def primes_under(n):
         if a[i] == True: primes.append(i)
 
     return primes
+
+
+def add(a,b):
+  return a + b
+
+
