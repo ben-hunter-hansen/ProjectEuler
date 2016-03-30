@@ -22,3 +22,8 @@ def primes_under(n):
         if a[i] == True: primes.append(i)
 
     return primes
+
+
+
+def sub(a,b):
+  return a - b
