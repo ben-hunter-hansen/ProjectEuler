@@ -6,6 +6,8 @@
 
 # TODO: This alg is taken from StackOverflow, mine was too
 # slow and shitty.
+# 
+
 def largest_prime_factor(n):
     i = 2
     while i * i < n:
