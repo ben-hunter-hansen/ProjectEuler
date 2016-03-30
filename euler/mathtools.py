@@ -23,14 +23,12 @@ def primes_under(n):
 
     return primes
 
-
-<<<<<<< HEAD
+def mod(a,b):
+  return a % b
 
 def sub(a,b):
   return a - b
-=======
+
+
 def add(a,b):
   return a + b
-
-
->>>>>>> 6a0a67d047cc76af40658c12b5ef86ba196f23ba
